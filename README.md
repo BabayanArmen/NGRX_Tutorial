@@ -25,3 +25,28 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+////////////////////////////////// ngrx /////////////////////////////////////////
+install @ngrx/store
+
+install @ngrx/store-devtools
+
+install @ngrx/schematics
+
+install effects
+ng add @ngrx/effects@latest
+
+//Generate store at root 
+ng generate store store --module=app.module.ts --root=true --statePath=store --stateInterface=AppState
+
+generate action
+ng g action store/actions/customer-support --api=true --skip-tests
+
+generate reducer
+ng g reducer store/reducers/customer-support --api=true --skipTests=true --reducers=../index.ts
+
+generate selector
+ng g selector store/selectors/customer-support --skipTests=true
+
+generate effect
+ng g effect store/effects/customer-support --module=app.module.ts --root=true --api=true --skipTests=true

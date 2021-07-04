@@ -1,0 +1,19 @@
+<div>
+    <input type="text" placeholder="name" [(ngModel)]="name">
+    <input type="email" placeholder="email" [(ngModel)]="email">
+    <input type="text" placeholder="message" [(ngModel)]="message">
+    <button (click)="onSubmit()">Submit</button>
+    <!-- <p>name is {{vm.name}}</p>
+    <p *ngIf="vm.isSentSuccess">send success</p> -->
+    <button (click)="clearForm()">clear form</button>
+</div>
+
+<span>name is {{name$ | async}}</span>
+
+<div *ngIf="vm$ | async as vm">
+    <p>using view model</p>
+    <p>name is {{vm.name}}</p>
+    <p>is sent success {{vm.isSentSuccess}}</p>
+</div>
+
+<button (click)="clearForm()">reset</button>
